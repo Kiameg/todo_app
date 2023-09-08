@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/42e26b8656.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="first_container">
+        <h1>Todo</h1>
+        <button id="new_todo_btn">New todo</button>
+        <button id="my_todo_btn">My todo lists</button>
+        <button id="completed_todo_btn">Completed todo's</button>
+        <form>
+            <div class="todo_inputs">
+                <label>
+                    Todo:
+                    <input id="title" type="text">
+                </label>
+                <label>
+                    Date:
+                    <input id="date" type="date">
+                </label>
+            </div>
+            <div class="todo_confirms">
+                <button id="button_confirm"><i class="fa-solid fa-check"></i></button>
+                <button id="button_cancel"><i class="fa-solid fa-x"></i></button>
+            </div>
+        </form>
+    </div>
+    <section>
+        <h1 class="h1_cards">Things to do:</h1>
+        <div class="cards">
+        </div>
+    </section>
+</body>
+
+</html>

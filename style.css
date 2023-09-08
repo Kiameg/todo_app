@@ -1,0 +1,189 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(237, 175, 175);
+  display: flex;
+  height: 100vh;
+}
+#first_container {
+  border-right: solid rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  padding: 3em;
+}
+
+h1 {
+  color: white;
+  font-family: "Amatic SC", cursive;
+  font-size: 10rem;
+}
+
+.h1_cards {
+  border-bottom: solid rgb(255, 255, 255);
+  width: 100%;
+  text-align: center;
+  padding-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+form {
+  position: absolute;
+  top: 50%;
+  right: 35%;
+  border: 1px solid white;
+  border-radius: 25px;
+  padding: 1rem;
+  max-width: 500px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-family: "Amatic SC", cursive;
+  font-size: 50px;
+  background-color: rgb(232, 160, 160);
+}
+
+.todo_inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.todo_inputs input {
+  background-color: inherit;
+  border: none;
+  border-bottom: 1px solid white;
+  font-size: 30px;
+  width: 100%;
+  color: white;
+  outline: none;
+  font-family: "Amatic SC", cursive;
+}
+
+.todo_confirms {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.todo_confirms button {
+  height: 30px;
+  max-width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background-color: rgb(237, 175, 175);
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.todo_confirms button:hover {
+  background-color: rgb(255, 201, 201);
+  color: #ff733b;
+}
+
+#first_container button {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+section {
+  width: 100%;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  font-family: "Amatic SC", cursive;
+  min-width: 1000px;
+}
+
+.card_text {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  font-size: 40px;
+  gap: 1em;
+  align-items: center;
+  color: #ff733b;
+  width: 100%;
+}
+
+.card_button,
+.card_button_undo,
+.card_button_delete,
+.card_button_delete_undo {
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background-color: rgb(237, 175, 175);
+}
+.fa-check {
+  opacity: 0;
+}
+
+form .fa-check {
+  opacity: initial;
+}
+
+.fa-check:hover {
+  opacity: 1;
+}
+
+.card__time {
+  border: 1px solid rgb(255, 255, 255);
+  background-color: rgb(237, 175, 175);
+  border-radius: 25px;
+  color: white;
+  font-size: 18px;
+  padding: 0.2em 1em;
+  font-weight: bold;
+}
+
+#new_todo_btn,
+#completed_todo_btn,
+#my_todo_btn {
+  display: flex;
+  font-size: 2rem;
+  border-radius: 8px;
+  font-family: "Amatic SC", cursive;
+  background-color: rgb(232, 160, 160);
+  color: white;
+}
+
+#new_todo_btn:hover {
+  background-color: rgb(255, 201, 201);
+  color: #ff733b;
+  font-weight: bold;
+}
+
+#my_todo_btn:hover {
+  background-color: rgb(255, 201, 201);
+  color: #ff733b;
+  font-weight: bold;
+}
+
+#completed_todo_btn:hover {
+  background-color: rgb(255, 201, 201);
+  color: #ff733b;
+  font-weight: bold;
+}
