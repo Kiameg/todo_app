@@ -1,7 +1,7 @@
-// Lav et array for alle vores kommende todo's
+// Initialize arrays for upcoming todos
 let todoArray = [];
 let completedTodoArray = [];
-// Tag fat i alle inputs for at lave en todo
+// Get references to input elements for creating a todo
 const title = document.querySelector("#title");
 const date = document.querySelector("#date");
 const buttonConfirm = document.querySelector("#button_confirm");
@@ -14,7 +14,7 @@ const form = document.querySelector("form");
 const h1Cards = document.querySelector(".h1_cards");
 let cardButtonComplete, cardButtonDelete, cardButtonUndo, cardButtonDeleteUndo;
 
-// Lav en function der laver objecter med data fra inputs
+// Create a function that generates objects using input data
 function createTodo(title, date) {
   const todo = {
     title: title,
@@ -22,6 +22,7 @@ function createTodo(title, date) {
   };
   todoArray.push(todo);
 }
+// Add event listeners for "My Todo" and "Completed Todo" buttons
 mytodoBtn.addEventListener("click", function () {
   makeTodoElements(todoArray);
   h1Cards.textContent = "Things to do:";
@@ -31,7 +32,7 @@ completedtodoBtn.addEventListener("click", function () {
   h1Cards.textContent = "Completed todo's:";
 });
 
-// Lav eventlisteners der kan slette og udføre en todo
+// Create event listeners for actions like deletion and completion of todos
 buttonConfirm.addEventListener("click", function (e) {
   e.preventDefault();
   if (title.value === "") {
@@ -56,11 +57,13 @@ buttonCancel.addEventListener("click", (e) => {
   date.value = "";
 });
 
-// Print the object todos to the document
+// Display todo objects in the document
 function makeTodoElements(array) {
   cardsDiv.innerHTML = "";
   if (array === completedTodoArray) {
+    // Display completed todos
     completedTodoArray.forEach(function (object) {
+      // Create and populate a card for each completed todo
       const newDiv = document.createElement("div");
       newDiv.classList.add("card");
       newDiv.dataset.index = `${completedTodoArray.indexOf(object)}`;
@@ -78,7 +81,9 @@ function makeTodoElements(array) {
     cardButtonDeleteUndo = document.querySelectorAll(".card_button_delete_undo");
     runEventListeners();
   } else {
+    // Display active todos
     todoArray.forEach(function (object) {
+      // Create and populate a card for each active todo
       const newDiv = document.createElement("div");
       newDiv.classList.add("card");
       newDiv.dataset.index = `${todoArray.indexOf(object)}`;
@@ -97,9 +102,9 @@ function makeTodoElements(array) {
     runEventListeners();
   }
 }
-
+// Define event listeners for various todo actions
 function runEventListeners() {
-  // Make a complete button and a make it move to a completed todo's array
+  // Handle marking a todo as complete and moving it to the completed todos
   cardButtonComplete.forEach(function (btn) {
     btn.addEventListener("click", function (e) {
       let i = e.target.parentElement.dataset.index;
@@ -113,7 +118,7 @@ function runEventListeners() {
       makeTodoElements(todoArray);
     });
   });
-  // Make a delete button on the todo
+  // Handle deleting a todo
   cardButtonDelete.forEach(function (btn) {
     btn.addEventListener("click", function (e) {
       todoArray.splice(e.target.parentElement.dataset.index, 1);
@@ -122,6 +127,7 @@ function runEventListeners() {
   });
 
   if (cardButtonDeleteUndo) {
+    // Handle deleting a completed todo
     cardButtonDeleteUndo.forEach(function (btn) {
       btn.addEventListener("click", function (e) {
         completedTodoArray.splice(e.target.parentElement.dataset.index, 1);
@@ -131,6 +137,7 @@ function runEventListeners() {
   }
 
   if (cardButtonUndo) {
+    // Handle undoing a completed todo and moving it back to the active todo
     cardButtonUndo.forEach(function (btn) {
       btn.addEventListener("click", function (e) {
         let i = e.target.parentElement.dataset.index;
