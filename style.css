@@ -18,6 +18,14 @@ body {
   padding: 3em;
 }
 
+#first_container button {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
 h1 {
   color: white;
   font-family: "Amatic SC", cursive;
@@ -87,14 +95,6 @@ form {
 .todo_confirms button:hover {
   background-color: rgb(255, 201, 201);
   color: #ff733b;
-}
-
-#first_container button {
-  width: 200px;
-  display: flex;
-  justify-content: center;
-  border: 1px solid white;
-  cursor: pointer;
 }
 
 section {
